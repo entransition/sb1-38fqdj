@@ -1,0 +1,121 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+
+const applications = [
+  {
+    title: "Maisons Individuelles",
+    description: "Construisez la maison de vos rêves avec notre système, alliant performance énergétique et confort optimal.",
+    imageUrl: "/images/maison-individuelle.jpg",
+    benefits: [
+      "Isolation thermique exceptionnelle",
+      "Construction rapide (3-4 mois)",
+      "Économies d'énergie jusqu'à 50%",
+      "Personnalisation complète"
+    ]
+  },
+  {
+    title: "Bâtiments Résidentiels",
+    description: "Solutions innovantes pour les projets résidentiels collectifs, du petit immeuble à la résidence.",
+    imageUrl: "/images/batiment-residentiel.jpg",
+    benefits: [
+      "Excellent rapport qualité-prix",
+      "Confort acoustique optimal",
+      "Respect des normes RT2020",
+      "Modularité des espaces"
+    ]
+  },
+  {
+    title: "Bâtiments Commerciaux",
+    description: "Espaces commerciaux modulables et économiques, adaptés à tous types d'activités.",
+    imageUrl: "/images/batiment-commercial.jpg",
+    benefits: [
+      "Adaptation aux besoins spécifiques",
+      "Installation rapide",
+      "Faible impact environnemental",
+      "Maintenance simplifiée"
+    ]
+  },
+  {
+    title: "Construction Modulaire et Tiny House",
+    description: "Solutions innovantes pour l'habitat compact et mobile, alliant confort et efficacité.",
+    imageUrl: "/images/tiny-house.jpg",
+    benefits: [
+      "Mobilité et flexibilité",
+      "Design optimisé",
+      "Haute performance énergétique",
+      "Installation rapide"
+    ]
+  },
+  {
+    title: "Superstructures et Extensions",
+    description: "Solutions d'extension et de surélévation légères pour optimiser l'espace existant.",
+    imageUrl: "/images/extension.jpg",
+    benefits: [
+      "Légèreté des structures",
+      "Travaux minimalement invasifs",
+      "Intégration harmonieuse",
+      "Rapidité d'exécution"
+    ]
+  },
+  {
+    title: "Chalets et Installations Récréatives",
+    description: "Constructions de loisirs alliant charme traditionnel et performance moderne.",
+    imageUrl: "/images/chalet.jpg",
+    benefits: [
+      "Résistance aux conditions extrêmes",
+      "Isolation haute performance",
+      "Esthétique personnalisable",
+      "Durabilité garantie"
+    ]
+  }
+];
+---
+
+<Layout title="Applications">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <header class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-eco-700 mb-4">Avantages du Système ENTRANSITION</h1>
+      <p class="text-xl text-eco-600 max-w-3xl mx-auto">
+        Une solution constructive qui surpasse les méthodes traditionnelles
+      </p>
+    </header>
+
+    <div class="mb-16 bg-white p-8 rounded-lg shadow-lg">
+      <h2 class="text-2xl font-bold text-eco-600 mb-6">Comparatif des Performances</h2>
+      <img 
+        src="/images/comparatif.jpg" 
+        alt="Graphique comparatif des performances" 
+        class="w-full max-w-4xl mx-auto"
+      />
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-eco-700">
+        <div class="flex items-center">
+          <span class="w-4 h-4 bg-[#1a2f1a] mr-2"></span>
+          <span>Coût Construction</span>
+        </div>
+        <div class="flex items-center">
+          <span class="w-4 h-4 bg-[#2d4d2d] mr-2"></span>
+          <span>Consommation énergétique</span>
+        </div>
+        <div class="flex items-center">
+          <span class="w-4 h-4 bg-[#90c590] mr-2"></span>
+          <span>Entretien sur 20 ans</span>
+        </div>
+        <div class="flex items-center">
+          <span class="w-4 h-4 bg-[#dc3545] mr-2"></span>
+          <span>Impact carbone</span>
+        </div>
+        <div class="flex items-center">
+          <span class="w-4 h-4 bg-[#0dcaf0] mr-2"></span>
+          <span>Cradle to Cradle</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {applications.map((app) => (
+        <ArticleCard {...app} />
+      ))}
+    </div>
+  </div>
+</Layout>

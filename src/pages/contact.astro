@@ -1,0 +1,46 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-4xl font-bold text-eco-700 mb-8">Contactez-nous</h1>
+      
+      <form class="space-y-6 bg-white p-8 rounded-lg shadow-lg border border-eco-200">
+        <div>
+          <label for="name" class="block text-sm font-medium text-eco-700">Nom</label>
+          <input type="text" name="name" id="name" class="mt-1 block w-full rounded-md border-eco-200 shadow-sm focus:border-eco-400 focus:ring-eco-400">
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm font-medium text-eco-700">Email</label>
+          <input type="email" name="email" id="email" class="mt-1 block w-full rounded-md border-eco-200 shadow-sm focus:border-eco-400 focus:ring-eco-400">
+        </div>
+
+        <div>
+          <label for="project" class="block text-sm font-medium text-eco-700">Type de projet</label>
+          <select id="project" name="project" class="mt-1 block w-full rounded-md border-eco-200 shadow-sm focus:border-eco-400 focus:ring-eco-400">
+            <option>Maison individuelle</option>
+            <option>Bâtiment résidentiel</option>
+            <option>Bâtiment commercial</option>
+            <option>École/Jardin d'enfants</option>
+            <option>Extension/Surélévation</option>
+            <option>Chalet/Installation récréative</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="message" class="block text-sm font-medium text-eco-700">Message</label>
+          <textarea id="message" name="message" rows="4" class="mt-1 block w-full rounded-md border-eco-200 shadow-sm focus:border-eco-400 focus:ring-eco-400"></textarea>
+        </div>
+
+        <div>
+          <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-eco-600 hover:bg-eco-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-eco-500">
+            Envoyer
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</Layout>

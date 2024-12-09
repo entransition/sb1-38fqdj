@@ -1,0 +1,76 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "ENTRANSITION - Construction modulaire et écologique" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} | ENTRANSITION</title>
+  </head>
+  <body class="min-h-screen bg-eco-50">
+    <header class="bg-white shadow-sm">
+      <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+          <div class="flex">
+            <a href="/" class="flex items-center">
+              <span class="text-2xl font-bold text-eco-600">ENTRANSITION</span>
+            </a>
+          </div>
+          <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+            <a href="/" class="text-eco-500 hover:text-eco-600 inline-flex items-center px-1 pt-1 text-sm font-medium">
+              Accueil
+            </a>
+            <a href="/fabrication" class="text-eco-500 hover:text-eco-600 inline-flex items-center px-1 pt-1 text-sm font-medium">
+              Fabrication
+            </a>
+            <a href="/applications" class="text-eco-500 hover:text-eco-600 inline-flex items-center px-1 pt-1 text-sm font-medium">
+              Applications
+            </a>
+            <a href="/histoire" class="text-eco-500 hover:text-eco-600 inline-flex items-center px-1 pt-1 text-sm font-medium">
+              Histoire
+            </a>
+            <a href="/contact" class="text-eco-500 hover:text-eco-600 inline-flex items-center px-1 pt-1 text-sm font-medium">
+              Contact
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="bg-eco-700 text-white mt-20">
+      <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h3 class="text-xl font-bold mb-4">ENTRANSITION</h3>
+            <p class="text-eco-100">Construction modulaire et écologique</p>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold mb-4">Contact</h3>
+            <p class="text-eco-100">Email: contact@entransition.com</p>
+          </div>
+          <div>
+            <h3 class="text-xl font-bold mb-4">Suivez-nous</h3>
+            <div class="flex space-x-4">
+              <a href="#" class="text-eco-100 hover:text-white">LinkedIn</a>
+              <a href="#" class="text-eco-100 hover:text-white">Twitter</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
